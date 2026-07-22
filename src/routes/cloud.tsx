@@ -125,14 +125,6 @@ function CloudPage() {
         <Link to="/pricing" className="btn btn-primary">
           Get started
         </Link>
-        <a
-          href="https://github.com/Stake-Dev-Tool/stake-dev-tool/blob/main/V2.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-ghost"
-        >
-          Read the architecture plan
-        </a>
       </div>
     </main>
   )

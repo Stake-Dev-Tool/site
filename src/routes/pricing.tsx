@@ -41,7 +41,7 @@ const FAQ = [
   },
   {
     q: 'What is a seat?',
-    a: 'A seat is a member slot in a workspace. Each seat also raises your quotas: 10 GiB of math storage, 5 active share links and 5 live play sessions per seat. Add or remove seats as your team changes.',
+    a: 'A seat is a member slot in a workspace. Each seat also raises your quotas: 10 GiB of math storage and 5 active share links per seat. Add or remove seats as your team changes.',
   },
   {
     q: 'How is it priced?',

@@ -30,7 +30,6 @@ export const PLAN_FEATURES = [
   'One member slot per seat',
   '10 GiB math storage per seat',
   '5 active share links per seat',
-  '5 live play sessions per seat',
   'Unlimited games and revisions',
   'Custom play subdomain · cancel anytime',
 ]

@@ -64,6 +64,10 @@ export default function Footer() {
             The open-source workbench for slot games on the Stake Engine RGS
             contract.
           </p>
+          <p className="mt-3 max-w-xs text-xs leading-relaxed text-faint">
+            Independent open-source project. Not affiliated with, endorsed by,
+            or operated by Stake.com.
+          </p>
         </div>
 
         {COLUMNS.map((col) => (

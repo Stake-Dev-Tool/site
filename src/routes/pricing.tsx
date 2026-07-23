@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import SectionRule from '../components/SectionRule'
 import {
+  FREE_FEATURES,
   PLAN_FEATURES,
   SELF_HOST_FEATURES,
   SEAT_FIRST_EUR,
@@ -21,7 +22,7 @@ export const Route = createFileRoute('/pricing')({
       {
         name: 'description',
         content:
-          'Self-hosting is free forever with every feature. The cloud subscription sells hosting: €3/month for the first seat, €2/month per additional seat. Subscribe when you are ready, cancel anytime.',
+          'The cloud starts free — build, test and share a game without a card. Seats add teammates, full revision history and permanent share links: €3/month for the first seat, €2/month per additional seat. Self-hosting is free forever with every feature.',
       },
     ],
   }),
@@ -36,8 +37,12 @@ const FAQ = [
     a: 'No. The entire platform is open source and self-hosters get 100% of the features. There is no enterprise edition and no feature gating. Billing code only runs on our hosted instance.',
   },
   {
+    q: 'What does the free cloud plan include?',
+    a: 'A full solo workflow, no card required: unlimited games and play sessions, 5 GiB of storage, and one active share link that lives up to 7 days. Each game keeps its latest revision — every push replaces the previous one. Subscribe when you need teammates, full revision history or share links that never expire.',
+  },
+  {
     q: 'What exactly does the subscription pay for?',
-    a: 'Hosting. Zero-install access, wildcard play subdomains, storage, backups and updates on our infrastructure. If you would rather run it yourself, everything is in the repo.',
+    a: 'Hosting, and room to grow past the free limits: teammates, full revision history, never-expiring share links, and 10 GiB of storage per seat — on our infrastructure with wildcard play subdomains, backups and updates. If you would rather run it yourself, everything is in the repo.',
   },
   {
     q: 'What is a seat?',
@@ -53,7 +58,7 @@ const FAQ = [
   },
   {
     q: 'Is there a free trial?',
-    a: 'No — there is no free trial on the hosted cloud. The free option is self-hosting: the whole platform is open source with every feature, so you can run it yourself for nothing. On the hosted service, billing starts when you subscribe and you can cancel anytime from the billing portal. Payments and EU VAT are handled by our merchant of record.',
+    a: 'Better — the free plan has no clock. Build, test and share on the hosted cloud for as long as you like within the free limits; billing only starts if you subscribe, and you can cancel anytime from the billing portal. Payments and EU VAT are handled by our merchant of record. And self-hosting stays entirely free, with every feature.',
   },
   {
     q: 'Why AGPL for the server?',
@@ -157,20 +162,55 @@ function SeatCalculator() {
   )
 }
 
+function CloudFreeCard() {
+  return (
+    <article className="card flex flex-col p-7 border-mint/35">
+      <div className="flex items-center justify-between gap-3">
+        <h2 className="m-0 text-base font-semibold">Cloud — Free</h2>
+        <span className="rounded-full border border-mint/40 px-2.5 py-1 font-mono text-[0.62rem] tracking-[0.1em] uppercase text-mint">
+          No card
+        </span>
+      </div>
+
+      <p className="mt-4 mb-0 text-sm text-moss">
+        Everything you need to build and share a game, solo-sized.
+      </p>
+
+      <p className="display mt-6 mb-0 text-4xl font-bold">
+        €0
+        <span className="font-sans ml-2 text-sm font-normal text-faint">/ month</span>
+      </p>
+
+      <ul
+        className="mt-6 mb-0 flex-1 space-y-2.5 pl-0 text-sm text-moss"
+        style={{ listStyle: 'none' }}
+      >
+        {FREE_FEATURES.map((feature) => (
+          <li key={feature}>{feature}</li>
+        ))}
+      </ul>
+      <a href="https://app.stakedevtool.com" className="btn btn-primary mt-7 w-full">
+        Start free
+      </a>
+    </article>
+  )
+}
+
 function PricingPage() {
   return (
     <main className="wrap pt-16 pb-8">
       <SectionRule label="pricing" />
       <h1 className="display mt-12 mb-0 max-w-xl text-4xl font-bold sm:text-5xl">
-        Self-hosting is free. Forever.
+        Start free. Cloud or self-host.
       </h1>
       <p className="mt-6 mb-0 max-w-2xl leading-relaxed text-moss">
-        The whole platform is open source; the subscription sells hosting and nothing else:
-        zero-install access, wildcard play subdomains, storage, backups and updates. One plan,
-        billed per seat — there is no feature gating and no enterprise edition.
+        The hosted cloud starts free: create a game, push math, test it and hand anyone a
+        playable share link — no card required. A seat subscription adds teammates, full
+        revision history, permanent share links and per-seat storage. And self-hosting stays
+        free forever with every feature — no gating, no enterprise edition.
       </p>
 
-      <div className="mt-10 grid gap-4 lg:grid-cols-2">
+      <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {/* Self-host */}
         <article className="card flex flex-col border-dashed p-7">
           <h2 className="m-0 text-base font-semibold">Self-host</h2>
@@ -195,6 +235,8 @@ function PricingPage() {
             Deploy from GitHub
           </a>
         </article>
+
+        <CloudFreeCard />
 
         <SeatCalculator />
       </div>

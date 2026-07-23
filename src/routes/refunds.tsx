@@ -17,14 +17,14 @@ export const Route = createFileRoute('/refunds')({
 
 function RefundsPage() {
   return (
-    <LegalPage title="Refund policy" updated="21 July 2026">
+    <LegalPage title="Refund policy" updated="23 July 2026">
       <h2>Evaluate without risk</h2>
       <p>
-        There is no free trial on the hosted service, but you take on no risk.
-        The entire platform is open source, so you can self-host it for free and
-        try every feature before you ever pay. And if you subscribe to the hosted
-        service and it does not work out, the first-payment guarantee below
-        refunds you in full.
+        You can evaluate without paying anything. The hosted service has a free
+        plan — build, test and share a game with no card on file — and the
+        entire platform is open source, so you can also self-host every feature
+        for free. If you then subscribe to a paid plan and it does not work
+        out, the first-payment guarantee below refunds you in full.
       </p>
 
       <h2>First payment</h2>

@@ -121,10 +121,16 @@ function CloudPage() {
         ))}
       </div>
 
-      <div className="mt-14 flex flex-wrap gap-3">
-        <Link to="/pricing" className="btn btn-primary">
-          Get started
+      <div className="mt-14 flex flex-wrap items-center gap-3">
+        <a href="https://app.stakedevtool.com" className="btn btn-primary">
+          Start free
+        </a>
+        <Link to="/pricing" className="btn btn-ghost">
+          See pricing
         </Link>
+        <span className="font-mono text-[0.7rem] tracking-[0.06em] text-faint">
+          free plan · no card required
+        </span>
       </div>
     </main>
   )

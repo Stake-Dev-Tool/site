@@ -54,7 +54,7 @@ function Home() {
               Download for desktop
             </a>
             <Link to="/pricing" className="btn btn-ghost">
-              See cloud pricing
+              Try the cloud free
             </Link>
           </div>
           <p
@@ -136,8 +136,8 @@ function Home() {
             Your next slot deserves a real dev loop.
           </h2>
           <p className="relative mx-auto mt-4 mb-0 max-w-md leading-relaxed text-moss">
-            Download the desktop app and point it at your game, or bring your
-            whole team onto the cloud workbench.
+            Download the desktop app and point it at your game, or start free
+            on the cloud workbench — no card required.
           </p>
           <div className="relative mt-8 flex flex-wrap justify-center gap-3">
             <a
@@ -149,7 +149,7 @@ function Home() {
               Download for desktop
             </a>
             <Link to="/pricing" className="btn btn-ghost">
-              Get started
+              Start free on the cloud
             </Link>
           </div>
         </div>

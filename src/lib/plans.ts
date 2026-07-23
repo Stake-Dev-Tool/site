@@ -25,12 +25,24 @@ export function seatYearlyEur(seats: number): number {
   return seatMonthlyEur(seats) * YEARLY_MONTHS
 }
 
+// The hosted Free plan: everything works, solo-sized. Mirrors the limits the
+// server enforces (crates/server/src/billing/plan.rs in the main repo).
+export const FREE_FEATURES = [
+  'Unlimited games — push, test, play',
+  '1 active share link · lives up to 7 days',
+  'Latest revision per game (each push replaces the previous)',
+  '5 GiB math storage',
+  'Unlimited play sessions',
+  'Solo — seats add teammates',
+]
+
 // Per-seat quotas, for the features list on the pricing page.
 export const PLAN_FEATURES = [
   'One member slot per seat',
   '10 GiB math storage per seat',
-  '5 active share links per seat',
-  'Unlimited games and revisions',
+  '5 active share links per seat — never expire',
+  'Full revision history on every game',
+  'Unlimited games and play sessions',
   'Custom play subdomain · cancel anytime',
 ]
 

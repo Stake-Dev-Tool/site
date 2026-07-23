@@ -17,7 +17,7 @@ export const Route = createFileRoute('/terms')({
 
 function TermsPage() {
   return (
-    <LegalPage title="Terms of Service" updated="21 July 2026">
+    <LegalPage title="Terms of Service" updated="23 July 2026">
       <p>
         These terms govern your use of the Stake Dev Tool hosted cloud service
         at stakedevtool.com (the "Service"), operated by {OPERATOR.name} (see
@@ -59,10 +59,11 @@ function TermsPage() {
           handles payment processing and VAT.
         </li>
         <li>
-          There is no free trial on the hosted service: billing begins when you
-          subscribe, and until then a hosted workspace is read-only. If you would
-          rather not pay, the entire platform is open source and free to
-          self-host, with every feature included.
+          The hosted service includes a free plan, subject to the limits
+          described on the <Link to="/pricing">pricing page</Link>; billing
+          begins only when you subscribe to a paid plan. If you would rather
+          not use the hosted service at all, the entire platform is open
+          source and free to self-host, with every feature included.
         </li>
         <li>
           Subscriptions renew automatically at the end of each billing period.
